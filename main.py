@@ -55,12 +55,13 @@ while True:
         y_pos = 100
 
         for line in text_to_display.split('\n'):
+            line = line.strip()
             # canvas.text(line.strip(), 50 , y_pos, 0)
             # y_pos += 20
 
             if line.startswith('!'):
                 actual_text = line[1:].strip()
-                text_width = len(actual_text)
+                text_width = len(actual_text) * 8
 
                 canvas.fill_rect(45,y_pos-2,text_width+10 , 12 ,0)
                 canvas.text(actual_text,50,y_pos,1)
